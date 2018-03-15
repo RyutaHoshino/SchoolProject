@@ -1,0 +1,857 @@
+<!-- <?xml version="1.0" encoding="UTF-8" standalone="true"?> -->
+
+<XMI xmlns:UML="org.omg.xmi.namespace.UML" xmlns:JUDE="http://objectclub.esm.co.jp/Jude/namespace/" xmi.version="1.1">
+
+<!--  -->
+-<XMI.header>
+
+
+-<XMI.documentation>
+
+<XMI.exporter>Jomt XMI writer</XMI.exporter>
+
+<XMI.exporterVersion>1.2.0.37</XMI.exporterVersion>
+
+<XMI.currentModelVersion>37</XMI.currentModelVersion>
+
+<XMI.maxModelVersion>37</XMI.maxModelVersion>
+
+<XMI.currentModelProducer>A.P</XMI.currentModelProducer>
+
+
+-<XMI.sortedVersionHistories>
+
+<XMI.versionEntry modelVersion="37" productVersion="professional 7.2.0"/>
+
+</XMI.sortedVersionHistories>
+
+</XMI.documentation>
+
+<XMI.metamodel xmi.version="1.4" xmi.name="UML"/>
+
+</XMI.header>
+
+
+-<XMI.content>
+
+
+-<UML:Model xmlns:UML="org.omg.xmi.namespace.UML" isAbstract="false" isLeaf="false" isRoot="true" unSolvedFlag="false" version="0" name="no_title" xmi.id="1-a28c6a3f0d904d2a8aacd4d1ef46c372">
+
+
+-<XMI.extension>
+
+
+-<UML:Model.customStyleMap>
+
+<UML:Model.styleProperty value="FF" key="uml.color.deep_history.alpha"/>
+
+<UML:Model.styleProperty value="true" key="diagram.editor.text.anti-aliasing"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.com_lifeline"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.class.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.artifact.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="er.entity.type.color.0.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="er.entity.type.color.6.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.subsystem.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.node_instance.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.composite_state.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="er.entity.type.color.3.alpha"/>
+
+<UML:Model.styleProperty value="#FFFFFF" key="er.entity.type.color.5"/>
+
+<UML:Model.styleProperty value="#FFFFFF" key="er.entity.type.color.6"/>
+
+<UML:Model.styleProperty value="#FFFFFF" key="er.entity.type.color.7"/>
+
+<UML:Model.styleProperty value="#FFFFFF" key="er.entity.type.color.8"/>
+
+<UML:Model.styleProperty value="#FFFF99" key="er.entity.type.color.1"/>
+
+<UML:Model.styleProperty value="#66CCFF" key="er.entity.type.color.2"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.package"/>
+
+<UML:Model.styleProperty value="#FFFFFF" key="er.entity.type.color.3"/>
+
+<UML:Model.styleProperty value="#FFFFFF" key="er.entity.type.color.4"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.connector.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.stereotype.color.4.alpha"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.role"/>
+
+<UML:Model.styleProperty value="#FF9999" key="er.entity.type.color.0"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.model"/>
+
+<UML:Model.styleProperty value="boundary" key="uml.stereotype.name.2"/>
+
+<UML:Model.styleProperty value="interface" key="uml.stereotype.name.1"/>
+
+<UML:Model.styleProperty value="entity" key="uml.stereotype.name.4"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.interaction_use.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.com_lifeline.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.stereotype.color.1.alpha"/>
+
+<UML:Model.styleProperty value="control" key="uml.stereotype.name.3"/>
+
+<UML:Model.styleProperty value="" key="uml.stereotype.name.6"/>
+
+<UML:Model.styleProperty value="" key="uml.stereotype.name.5"/>
+
+<UML:Model.styleProperty value="0" key="view.gradation_background.selected"/>
+
+<UML:Model.styleProperty value="" key="uml.stereotype.name.8"/>
+
+<UML:Model.styleProperty value="" key="uml.stereotype.name.7"/>
+
+<UML:Model.styleProperty value="actor" key="uml.stereotype.name.0"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="other.color.common"/>
+
+<UML:Model.styleProperty value="3" key="view.gradation.vertical"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.merge"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.node_instance"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.artifact"/>
+
+<UML:Model.styleProperty value="FF" key="uml.stereotype.color.7.alpha"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.usecase"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.submachine_state.alpha"/>
+
+<UML:Model.styleProperty value="true" key="diagram.editor.other.anti-aliasing"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.action_state.alpha"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.interaction_use"/>
+
+<UML:Model.styleProperty value="FF" key="uml.stereotype.color.0.alpha"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.class"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.seq_lifeline.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="er.entity.type.color.5.alpha"/>
+
+<UML:Model.styleProperty value="false" key="shadow.on.elements"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.component.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.state_invariant.alpha"/>
+
+<UML:Model.styleProperty value="0" key="view.gradation.null"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.submachine_state"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.node"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.choice"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.sub_activity"/>
+
+<UML:Model.styleProperty value="FF" key="uml.stereotype.color.6.alpha"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.component_instance"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.shallow_history"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.choice.alpha"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.activity_parameter_node"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.note.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.activity_parameter_node.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.node.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.model.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.stereotype.color.5.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.object_flow_state.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="other.color.common.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.entrypoint.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.part.alpha"/>
+
+<UML:Model.styleProperty value="1" key="view.gradation.diagonal"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.seq_lifeline"/>
+
+<UML:Model.styleProperty value="FF" key="uml.stereotype.color.8.alpha"/>
+
+<UML:Model.styleProperty value="0" key="view.gradation_element.selected"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.subsystem"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.usecase.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.merge.alpha"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.part"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.exitpoint.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.partition.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.shallow_history.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.flow_final_node.alpha"/>
+
+<UML:Model.styleProperty value="#FFCCCC" key="uml.color.note"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.package.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="er.entity.type.color.4.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="er.entity.type.color.7.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.component_instance.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="er.entity.type.color.8.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="er.entity.type.color.1.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.sub_activity.alpha"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.action_state"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.state_invariant"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.deep_history"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.exitpoint"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.port.alpha"/>
+
+<UML:Model.styleProperty value="Resource" key="er.entity.type.name.0"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.object_flow_state"/>
+
+<UML:Model.styleProperty value="Event" key="er.entity.type.name.1"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.connector"/>
+
+<UML:Model.styleProperty value="Summary" key="er.entity.type.name.2"/>
+
+<UML:Model.styleProperty value="FF" key="uml.color.role.alpha"/>
+
+<UML:Model.styleProperty value="FF" key="uml.stereotype.color.3.alpha"/>
+
+<UML:Model.styleProperty value="" key="er.entity.type.name.3"/>
+
+<UML:Model.styleProperty value="" key="er.entity.type.name.4"/>
+
+<UML:Model.styleProperty value="" key="er.entity.type.name.5"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.port"/>
+
+<UML:Model.styleProperty value="" key="er.entity.type.name.6"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.entrypoint"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.component"/>
+
+<UML:Model.styleProperty value="" key="er.entity.type.name.7"/>
+
+<UML:Model.styleProperty value="" key="er.entity.type.name.8"/>
+
+<UML:Model.styleProperty value="FF" key="er.entity.type.color.2.alpha"/>
+
+<UML:Model.styleProperty value="2" key="view.gradation.horizontal"/>
+
+<UML:Model.styleProperty value="FF" key="uml.stereotype.color.2.alpha"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.composite_state"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.stereotype.color.6"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.partition"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.stereotype.color.5"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.stereotype.color.8"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.stereotype.color.7"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.stereotype.color.2"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.stereotype.color.1"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.stereotype.color.4"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.color.flow_final_node"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.stereotype.color.3"/>
+
+<UML:Model.styleProperty value="#FFFFCC" key="uml.stereotype.color.0"/>
+
+</UML:Model.customStyleMap>
+
+</XMI.extension>
+
+
+-<UML:ModelElement.taggedValue>
+
+
+-<UML:TaggedValue version="0" xmi.id="2-a28c6a3f0d904d2a8aacd4d1ef46c372" value="%3C%3Fxml+version+%3D+%221.0%22+encoding+%3D+%22UTF-8%22+standalone+%3D+%22yes%22%3F%3E%0D%0A%3CumlProfiles%3E%0D%0A+%3CumlProfile%3E%0D%0A++%3Cname%3Ejude.profiles%3C%2Fname%3E%0D%0A+%3C%2FumlProfile%3E%0D%0A%3C%2FumlProfiles%3E%0D%0A%0D%0A" tag="jude.profiles">
+
+
+-<UML:TaggedValue.modelElement>
+
+<UML:ModelElement xmi.idref="1-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:TaggedValue.modelElement>
+
+</UML:TaggedValue>
+
+
+-<UML:TaggedValue version="0" xmi.id="3-a28c6a3f0d904d2a8aacd4d1ef46c372" value="%3C%3Fxml+version+%3D+%221.0%22+encoding+%3D+%22UTF-8%22+standalone+%3D+%22yes%22%3F%3E%0D%0A%3CmmUserIcon%3E%0D%0A+%3CmmUserIconInfo%3E%0D%0A++%3Cname%3Ejude.usericons%3C%2Fname%3E%0D%0A+%3C%2FmmUserIconInfo%3E%0D%0A%3C%2FmmUserIcon%3E%0D%0A%0D%0A" tag="jude.usericons">
+
+
+-<UML:TaggedValue.modelElement>
+
+<UML:ModelElement xmi.idref="1-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:TaggedValue.modelElement>
+
+</UML:TaggedValue>
+
+</UML:ModelElement.taggedValue>
+
+
+-<UML:ModelElement.behavior>
+
+<UML:ActivityGraph xmi.idref="5-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:ModelElement.behavior>
+
+
+-<UML:Namespace.ownedElement>
+
+
+-<UML:ActivityGraph unSolvedFlag="false" version="0" name="%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%93%E3%83%86%E3%82%A30" xmi.id="5-a28c6a3f0d904d2a8aacd4d1ef46c372">
+
+
+-<UML:StateMachine.top>
+
+
+-<UML:CompositeState unSolvedFlag="false" version="0" name="" xmi.id="6-a28c6a3f0d904d2a8aacd4d1ef46c372" isRegion="true" isOrthogonal="false" isConcurrent="true">
+
+
+-<UML:CompositeState.subvertex>
+
+
+-<UML:Pseudostate unSolvedFlag="false" version="0" name="%E9%96%8B%E5%A7%8B0" xmi.id="9-a28c6a3f0d904d2a8aacd4d1ef46c372" kind="initial">
+
+
+-<UML:StateVertex.container>
+
+<UML:CompositeState xmi.idref="6-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.container>
+
+
+-<UML:StateVertex.outgoing>
+
+<UML:Transition xmi.idref="6d-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.outgoing>
+
+</UML:Pseudostate>
+
+
+-<UML:ActionState unSolvedFlag="false" version="0" name="int+x" xmi.id="b-a28c6a3f0d904d2a8aacd4d1ef46c372" isDynamic="false">
+
+
+-<UML:StateVertex.container>
+
+<UML:CompositeState xmi.idref="6-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.container>
+
+
+-<UML:StateVertex.outgoing>
+
+<UML:Transition xmi.idref="7x-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.outgoing>
+
+
+-<UML:StateVertex.incoming>
+
+<UML:Transition xmi.idref="6d-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.incoming>
+
+
+-<UML:State.entry>
+
+<UML:Action unSolvedFlag="false" version="0" name="int+x" xmi.id="c-a28c6a3f0d904d2a8aacd4d1ef46c372" actionType="5" isAsynchronous="false"/>
+
+</UML:State.entry>
+
+</UML:ActionState>
+
+
+-<UML:FinalState unSolvedFlag="false" version="0" name="%E7%B5%82%E4%BA%860" xmi.id="6a-a28c6a3f0d904d2a8aacd4d1ef46c372">
+
+
+-<UML:StateVertex.container>
+
+<UML:CompositeState xmi.idref="6-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.container>
+
+
+-<UML:StateVertex.incoming>
+
+<UML:Transition xmi.idref="7x-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.incoming>
+
+</UML:FinalState>
+
+</UML:CompositeState.subvertex>
+
+</UML:CompositeState>
+
+</UML:StateMachine.top>
+
+
+-<UML:StateMachine.context>
+
+<UML:ModelElement xmi.idref="1-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateMachine.context>
+
+
+-<UML:StateMachine.transitions>
+
+
+-<UML:Transition unSolvedFlag="false" version="0" name="" xmi.id="6d-a28c6a3f0d904d2a8aacd4d1ef46c372">
+
+
+-<UML:Transition.source>
+
+<UML:StateVertex xmi.idref="9-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.source>
+
+
+-<UML:Transition.target>
+
+<UML:StateVertex xmi.idref="b-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.target>
+
+
+-<UML:Transition.stateMachine>
+
+<UML:StateMachine xmi.idref="5-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.stateMachine>
+
+</UML:Transition>
+
+
+-<UML:Transition unSolvedFlag="false" version="0" name="" xmi.id="7x-a28c6a3f0d904d2a8aacd4d1ef46c372">
+
+
+-<UML:Transition.source>
+
+<UML:StateVertex xmi.idref="b-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.source>
+
+
+-<UML:Transition.target>
+
+<UML:StateVertex xmi.idref="6a-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.target>
+
+
+-<UML:Transition.stateMachine>
+
+<UML:StateMachine xmi.idref="5-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.stateMachine>
+
+</UML:Transition>
+
+</UML:StateMachine.transitions>
+
+</UML:ActivityGraph>
+
+</UML:Namespace.ownedElement>
+
+</UML:Model>
+
+<XMI.extension/>
+
+
+-<XMI.extension>
+
+
+-<JUDE:ActivityDiagram xmlns:JUDE="http://objectclub.esm.co.jp/Jude/namespace/" version="0" name="フローチャート0" xmi.id="4-a28c6a3f0d904d2a8aacd4d1ef46c372" horizontalMaxLevel="-1" verticalMaxLevel="-1" typeInfo="Activity Diagram">
+
+
+-<JUDE:StateChartDiagram.semanticModel>
+
+<UML:ActivityGraph xmi.idref="5-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:StateChartDiagram.semanticModel>
+
+
+-<UML:ModelElement.taggedValue>
+
+
+-<UML:TaggedValue version="0" xmi.id="7-a28c6a3f0d904d2a8aacd4d1ef46c372" value="true" tag="jude.biz.flow_chart">
+
+
+-<UML:TaggedValue.modelElement>
+
+<UML:ModelElement xmi.idref="4-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:TaggedValue.modelElement>
+
+</UML:TaggedValue>
+
+</UML:ModelElement.taggedValue>
+
+
+-<JUDE:Diagram.presentations>
+
+
+-<JUDE:InitialStatePresentation version="0" xmi.id="8-a28c6a3f0d904d2a8aacd4d1ef46c372" label="%E9%96%8B%E5%A7%8B0" visibility="true" doAutoResize="false" height="20.0" width="20.0" notationType="0" constraintVisibility="true" stereotypeVisibility="true" depth="2147483636">
+
+
+-<JUDE:UPresentation.semanticModel>
+
+<UML:Pseudostate xmi.idref="9-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.semanticModel>
+
+
+-<JUDE:UPresentation.diagram>
+
+<JUDE:Diagram xmi.idref="4-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.diagram>
+
+
+-<JUDE:UPresentation.clients>
+
+<JUDE:TransitionPresentation xmi.idref="6c-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.clients>
+
+
+-<JUDE:JomtPresentation.location>
+
+<XMI.field>191.0</XMI.field>
+
+<XMI.field>137.0</XMI.field>
+
+</JUDE:JomtPresentation.location>
+
+</JUDE:InitialStatePresentation>
+
+
+-<JUDE:ActionStatePresentation version="0" xmi.id="a-a28c6a3f0d904d2a8aacd4d1ef46c372" label="int+x" visibility="true" doAutoResize="false" height="23.09375" width="64.0" notationType="0" constraintVisibility="true" stereotypeVisibility="false" depth="2147483635" signalReverse="false" allActionVisibility="true">
+
+
+-<JUDE:UPresentation.semanticModel>
+
+<UML:ActionState xmi.idref="b-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.semanticModel>
+
+
+-<JUDE:UPresentation.diagram>
+
+<JUDE:Diagram xmi.idref="4-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.diagram>
+
+
+-<JUDE:UPresentation.clients>
+
+<JUDE:TransitionPresentation xmi.idref="6c-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+<JUDE:TransitionPresentation xmi.idref="7w-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.clients>
+
+
+-<JUDE:UPresentation.customStyleMap>
+
+<JUDE:UPresentation.styleProperty value="FF" key="fill.color.alpha"/>
+
+<JUDE:UPresentation.styleProperty value="#FFFFCC" key="fill.color"/>
+
+</JUDE:UPresentation.customStyleMap>
+
+
+-<JUDE:JomtPresentation.location>
+
+<XMI.field>169.0</XMI.field>
+
+<XMI.field>211.0</XMI.field>
+
+</JUDE:JomtPresentation.location>
+
+</JUDE:ActionStatePresentation>
+
+
+-<JUDE:FinalStatePresentation version="0" xmi.id="69-a28c6a3f0d904d2a8aacd4d1ef46c372" label="%E7%B5%82%E4%BA%860" visibility="true" doAutoResize="true" height="20.0" width="20.0" notationType="0" constraintVisibility="true" stereotypeVisibility="true" depth="2147483634" allActionVisibility="true">
+
+
+-<JUDE:UPresentation.semanticModel>
+
+<UML:FinalState xmi.idref="6a-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.semanticModel>
+
+
+-<JUDE:UPresentation.diagram>
+
+<JUDE:Diagram xmi.idref="4-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.diagram>
+
+
+-<JUDE:UPresentation.clients>
+
+<JUDE:TransitionPresentation xmi.idref="7w-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.clients>
+
+
+-<JUDE:JomtPresentation.location>
+
+<XMI.field>191.0</XMI.field>
+
+<XMI.field>288.0</XMI.field>
+
+</JUDE:JomtPresentation.location>
+
+</JUDE:FinalStatePresentation>
+
+
+-<JUDE:TransitionPresentation version="0" xmi.id="6c-a28c6a3f0d904d2a8aacd4d1ef46c372" visibility="true" notationType="0" constraintVisibility="true" stereotypeVisibility="true" depth="2147483633" rightAngle="false">
+
+
+-<JUDE:UPresentation.semanticModel>
+
+<UML:Transition xmi.idref="6d-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.semanticModel>
+
+
+-<JUDE:UPresentation.diagram>
+
+<JUDE:Diagram xmi.idref="4-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.diagram>
+
+
+-<JUDE:UPresentation.servers>
+
+<JUDE:InitialStatePresentation xmi.idref="8-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+<JUDE:ActionStatePresentation xmi.idref="a-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.servers>
+
+
+-<JUDE:UPresentation.customStyleMap>
+
+<JUDE:UPresentation.styleProperty value="endarrow" key="line.arrow.type"/>
+
+<JUDE:UPresentation.styleProperty value="line" key="line.type"/>
+
+<JUDE:UPresentation.styleProperty value="line" key="line.shape"/>
+
+</JUDE:UPresentation.customStyleMap>
+
+
+-<JUDE:JomtPresentation.location>
+
+<XMI.field>0.0</XMI.field>
+
+<XMI.field>0.0</XMI.field>
+
+</JUDE:JomtPresentation.location>
+
+
+-<JUDE:PathPresentation.namePresentation>
+
+
+-<JUDE:LabelPresentation version="0" xmi.id="7i-a28c6a3f0d904d2a8aacd4d1ef46c372" visibility="true" doAutoResize="true" height="15.09375" width="11.0" notationType="0" constraintVisibility="true" stereotypeVisibility="true" depth="0">
+
+
+-<JUDE:JomtPresentation.location>
+
+<XMI.field>195.5</XMI.field>
+
+<XMI.field>185.453125</XMI.field>
+
+</JUDE:JomtPresentation.location>
+
+
+-<JUDE:JomtPresentation.compositeParent>
+
+<JUDE:UPresentation xmi.idref="6c-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:JomtPresentation.compositeParent>
+
+</JUDE:LabelPresentation>
+
+</JUDE:PathPresentation.namePresentation>
+
+
+-<JUDE:BinaryRelationPresentation.sourceEnd>
+
+<XMI.field>0.5</XMI.field>
+
+<XMI.field>0.5</XMI.field>
+
+</JUDE:BinaryRelationPresentation.sourceEnd>
+
+
+-<JUDE:BinaryRelationPresentation.targetEnd>
+
+<XMI.field>0.5</XMI.field>
+
+<XMI.field>0.5</XMI.field>
+
+</JUDE:BinaryRelationPresentation.targetEnd>
+
+<JUDE:PathPresentation.points/>
+
+</JUDE:TransitionPresentation>
+
+
+-<JUDE:TransitionPresentation version="0" xmi.id="7w-a28c6a3f0d904d2a8aacd4d1ef46c372" visibility="true" notationType="0" constraintVisibility="true" stereotypeVisibility="true" depth="2147483632" rightAngle="false">
+
+
+-<JUDE:UPresentation.semanticModel>
+
+<UML:Transition xmi.idref="7x-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.semanticModel>
+
+
+-<JUDE:UPresentation.diagram>
+
+<JUDE:Diagram xmi.idref="4-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.diagram>
+
+
+-<JUDE:UPresentation.servers>
+
+<JUDE:ActionStatePresentation xmi.idref="a-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+<JUDE:FinalStatePresentation xmi.idref="69-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:UPresentation.servers>
+
+
+-<JUDE:UPresentation.customStyleMap>
+
+<JUDE:UPresentation.styleProperty value="endarrow" key="line.arrow.type"/>
+
+<JUDE:UPresentation.styleProperty value="line" key="line.type"/>
+
+<JUDE:UPresentation.styleProperty value="line" key="line.shape"/>
+
+</JUDE:UPresentation.customStyleMap>
+
+
+-<JUDE:JomtPresentation.location>
+
+<XMI.field>0.0</XMI.field>
+
+<XMI.field>0.0</XMI.field>
+
+</JUDE:JomtPresentation.location>
+
+
+-<JUDE:PathPresentation.namePresentation>
+
+
+-<JUDE:LabelPresentation version="0" xmi.id="9u-a28c6a3f0d904d2a8aacd4d1ef46c372" visibility="true" doAutoResize="true" height="15.09375" width="11.0" notationType="0" constraintVisibility="true" stereotypeVisibility="true" depth="0">
+
+
+-<JUDE:JomtPresentation.location>
+
+<XMI.field>195.5</XMI.field>
+
+<XMI.field>262.5</XMI.field>
+
+</JUDE:JomtPresentation.location>
+
+
+-<JUDE:JomtPresentation.compositeParent>
+
+<JUDE:UPresentation xmi.idref="7w-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</JUDE:JomtPresentation.compositeParent>
+
+</JUDE:LabelPresentation>
+
+</JUDE:PathPresentation.namePresentation>
+
+
+-<JUDE:BinaryRelationPresentation.sourceEnd>
+
+<XMI.field>0.5</XMI.field>
+
+<XMI.field>0.5</XMI.field>
+
+</JUDE:BinaryRelationPresentation.sourceEnd>
+
+
+-<JUDE:BinaryRelationPresentation.targetEnd>
+
+<XMI.field>0.5</XMI.field>
+
+<XMI.field>0.5</XMI.field>
+
+</JUDE:BinaryRelationPresentation.targetEnd>
+
+<JUDE:PathPresentation.points/>
+
+</JUDE:TransitionPresentation>
+
+</JUDE:Diagram.presentations>
+
+</JUDE:ActivityDiagram>
+
+</XMI.extension>
+
+</XMI.content>
+
+</XMI>
