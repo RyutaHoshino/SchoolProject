@@ -1,0 +1,148 @@
+-<UML:StateMachine.top>
+
+
+-<UML:CompositeState unSolvedFlag="false" version="0" name="" xmi.id="6-a28c6a3f0d904d2a8aacd4d1ef46c372" isRegion="true" isOrthogonal="false" isConcurrent="true">
+
+
+-<UML:CompositeState.subvertex>
+
+
+-<UML:Pseudostate unSolvedFlag="false" version="0" name="%E9%96%8B%E5%A7%8B0" xmi.id="9-a28c6a3f0d904d2a8aacd4d1ef46c372" kind="initial">
+
+
+-<UML:StateVertex.container>
+
+<UML:CompositeState xmi.idref="6-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.container>
+
+
+-<UML:StateVertex.outgoing>
+
+<UML:Transition xmi.idref="6d-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.outgoing>
+
+</UML:Pseudostate>
+
+
+-<UML:ActionState unSolvedFlag="false" version="0" name="int+x" xmi.id="b-a28c6a3f0d904d2a8aacd4d1ef46c372" isDynamic="false">
+
+
+-<UML:StateVertex.container>
+
+<UML:CompositeState xmi.idref="6-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.container>
+
+
+-<UML:StateVertex.outgoing>
+
+<UML:Transition xmi.idref="7x-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.outgoing>
+
+
+-<UML:StateVertex.incoming>
+
+<UML:Transition xmi.idref="6d-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.incoming>
+
+
+-<UML:State.entry>
+
+<UML:Action unSolvedFlag="false" version="0" name="int+x" xmi.id="c-a28c6a3f0d904d2a8aacd4d1ef46c372" actionType="5" isAsynchronous="false"/>
+
+</UML:State.entry>
+
+</UML:ActionState>
+
+
+-<UML:FinalState unSolvedFlag="false" version="0" name="%E7%B5%82%E4%BA%860" xmi.id="6a-a28c6a3f0d904d2a8aacd4d1ef46c372">
+
+
+-<UML:StateVertex.container>
+
+<UML:CompositeState xmi.idref="6-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.container>
+
+
+-<UML:StateVertex.incoming>
+
+<UML:Transition xmi.idref="7x-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateVertex.incoming>
+
+</UML:FinalState>
+
+</UML:CompositeState.subvertex>
+
+</UML:CompositeState>
+
+</UML:StateMachine.top>
+
+
+-<UML:StateMachine.context>
+
+<UML:ModelElement xmi.idref="1-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:StateMachine.context>
+
+
+-<UML:StateMachine.transitions>
+
+
+-<UML:Transition unSolvedFlag="false" version="0" name="" xmi.id="6d-a28c6a3f0d904d2a8aacd4d1ef46c372">
+
+
+-<UML:Transition.source>
+
+<UML:StateVertex xmi.idref="9-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.source>
+
+
+-<UML:Transition.target>
+
+<UML:StateVertex xmi.idref="b-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.target>
+
+
+-<UML:Transition.stateMachine>
+
+<UML:StateMachine xmi.idref="5-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.stateMachine>
+
+</UML:Transition>
+
+
+-<UML:Transition unSolvedFlag="false" version="0" name="" xmi.id="7x-a28c6a3f0d904d2a8aacd4d1ef46c372">
+
+
+-<UML:Transition.source>
+
+<UML:StateVertex xmi.idref="b-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.source>
+
+
+-<UML:Transition.target>
+
+<UML:StateVertex xmi.idref="6a-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.target>
+
+
+-<UML:Transition.stateMachine>
+
+<UML:StateMachine xmi.idref="5-a28c6a3f0d904d2a8aacd4d1ef46c372"/>
+
+</UML:Transition.stateMachine>
+
+</UML:Transition>
+
+</UML:StateMachine.transitions>
