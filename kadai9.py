@@ -1,33 +1,49 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Debug import pdb; pdb.set_trace()
 import xmltodict
 import urllib.parse
-flow_list = []
-# debugの方法
-def extraction_flow(data_list):
-    # 先頭！
-    first_point = urllib.parse.unquote(data_list['UML:Pseudostate']['@name'])
-    flow_list.insert(0, first_point)
-    # 真ん中 for 文で回すか
-    for s in data_list['UML:ActionState']:
-        middle_point = urllib.parse.unquote(s['@name'])
-        flow_list.append(middle_point)
-    # 最後
-    end_point = urllib.parse.unquote(data_list['UML:FinalState']['@name'])
-    flow_list.insert(-1, end_point)
-    return flow_list
+
+flow_figure_list = []
+output_flow_figure_list = []
+initialData =[]
+
+def extraction_flow_figure(data_lists):
+    # フロー図の必要な箇所のみ抽出します
+    first_part = urllib.parse.unquote(data_lists['UML:Pseudostate']['@name'])
+    flow_figure_list.insert(0, first_part)
+    for action_state in data_lists['UML:ActionState']:
+        middle_part = urllib.parse.unquote(action_state['@name'])
+        flow_figure_list.append(middle_part)
+    last_part = urllib.parse.unquote(data_lists['UML:FinalState']['@name'])
+    flow_figure_list.insert(-1, last_part)
+    return flow_figure_list
+
+def string_to_python_code(string_lines):
+    # pythonに対応していないため書き換える
+    for string_line in string_lines:
+        if string_line.find('開始') != -1:
+            initialData = string_line.replace('開始', '')
+        elif string_line.find('print') != -1:
+            # ToDo 強引な置き換えなので直したい
+            output_flow_figure_list.append(string_line.replace('+', '(')+ ')')
+        elif string_line.find('int+') != -1:
+            output_flow_figure_list.append(string_line.strip("int+") +"="+ initialData)
+        elif string_line.find('++') != -1:
+            output_flow_figure_list.append(string_line.replace('++', '+=1'))
+        else:
+            print("対応できません...")
+    return output_flow_figure_list
 
 with open('./target_read.xml') as fd:
     doc = xmltodict.parse(fd.read())
-    flow_chat_doc = doc['XMI']['XMI.content']['UML:Model']['UML:Namespace.ownedElement']
-    data_flow = flow_chat_doc['UML:ActivityGraph']['UML:StateMachine.top']['UML:CompositeState']['UML:CompositeState.subvertex']
-    # list.append(data_flow)
-    list = extraction_flow(data_flow)
+    uml_model_doc = doc['XMI']['XMI.content']['UML:Model']['UML:Namespace.ownedElement']
+    data_flow_part = uml_model_doc['UML:ActivityGraph']['UML:StateMachine.top']['UML:CompositeState']['UML:CompositeState.subvertex']
+    data_flow_part_list = extraction_flow_figure(data_flow_part)
+    new_data_flow_part_list = string_to_python_code(data_flow_part_list)
 
-    # import pdb; pdb.set_trace()
-# print(list)
-# # 出力できた！
-f = open('text.txt', 'w') # 書き込みモードで開く
-str1 = '\n'.join(str(e) for e in list)
-f.write(str1) # 引数の文字列をファイルに書き込む
-f.close() # ファイルを閉じる
+# pythonファイルへの出力
+f = open('text.py', 'w')
+str1 = '\n'.join(str(e) for e in new_data_flow_part_list)
+f.write(str1)
+f.close()
