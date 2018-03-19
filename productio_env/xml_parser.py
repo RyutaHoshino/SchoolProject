@@ -3,6 +3,7 @@
 # Debug import pdb; pdb.set_trace()
 import xmltodict
 import urllib.parse
+import sys
 
 state_lists = []
 flow_lists = []
@@ -12,13 +13,27 @@ initialData =[]
 def extraction_action_state(data_lists):
     # フロー図のstateのみ抽出します
     for state_parts in data_lists['UML:Pseudostate']:
-        state_part = urllib.parse.unquote(state_parts['@name'])
+        try:
+            if state_parts['UML:StateVertex.outgoing']:
+                from_xmi = state_parts['UML:StateVertex.outgoing']
+                # ここが動かないので修正します！
+                import pdb; pdb.set_trace()
+            elif state_parts['UML:StateVertex.incoming']:
+                to_xmi = state_parts['UML:StateVertex.incoming']
+        except Exception as e:
+            print(e)
+        else:
+            name = urllib.parse.unquote(state_parts['@name'])
+        state_part = { 'root': { 'from_xmi': from_xmi }, 'name': name }
         state_lists.append(state_part)
+    # 終点部分の処理
+    last_part = urllib.parse.unquote(data_lists['UML:FinalState']['@name'])
+    state_lists.insert(-1, last_part)
+   # 中間部分の処理
     for action_parts in data_lists['UML:ActionState']:
         middle_part = urllib.parse.unquote(action_parts['@name'])
         state_lists.append(middle_part)
-    last_part = urllib.parse.unquote(data_lists['UML:FinalState']['@name'])
-    state_lists.insert(-1, last_part)
+
     return state_lists
 
 def extraction_data_flow(data_lists):
@@ -27,9 +42,11 @@ def extraction_data_flow(data_lists):
         try:
             if flow_parts['UML:Transition.guard']:
                 gurad_part = urllib.parse.unquote(flow_parts['UML:Transition.guard']['UML:Guard']['@name'])
-                flow_lists.append(gurad_part)
         except Exception as e:
             print(e)
+        else:
+            guard_info = { 'xmi_id': flow_parts['@xmi.id'], 'guard': gurad_part }
+            flow_lists.append(guard_info)
     return flow_lists
 
 def string_to_python_code(string_lines):
@@ -50,7 +67,9 @@ def string_to_python_code(string_lines):
             print("対応できません...")
     return output_flow_figure_list
 # target_readなら問題ない　クラスにしたいね。
-with open('./if_sentense.xml') as fd:
+
+xml_path = "./%s" % (sys.argv[1])
+with open(xml_path) as fd:
     doc = xmltodict.parse(fd.read())
     uml_model_doc = doc['XMI']['XMI.content']['UML:Model']['UML:Namespace.ownedElement']['UML:ActivityGraph']
     data_flow_part = uml_model_doc['UML:StateMachine.top']['UML:CompositeState']['UML:CompositeState.subvertex']
