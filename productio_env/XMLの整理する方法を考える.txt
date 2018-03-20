@@ -1,0 +1,23 @@
+[{'from': [{'xmi': '6d-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': ''}], 'name': '開始0'},
+ {'from': [{'xmi': '104-a28c6a3f0d904d2a8aacd4d1ef46c372'}, {'xmi': '17e-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '1o1-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'デシジョンノード・マージノード1'},
+ {'from': [{'xmi': '1hl-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '6d-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'int+x'},
+ {'from': [{'xmi': '19q-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '17e-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'x+1'},
+ {'from': [{'xmi': '1o1-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '1hl-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'input+x'},
+ {'from': {'xmi': ''}, 'to': [{'xmi': '104-a28c6a3f0d904d2a8aacd4d1ef46c372'}, {'xmi': '19q-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': '終了0'}]
+// この順にならべかえる
+ [{'from': [{'xmi': '6d-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': ''}], 'name': '開始0'},
+  {'from': [{'xmi': '1hl-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '6d-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'int+x'},
+  {'from': [{'xmi': '1o1-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '1hl-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'input+x'},
+
+  {'from': [{'xmi': '104-a28c6a3f0d904d2a8aacd4d1ef46c372'}, {'xmi': '17e-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '1o1-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'デシジョンノード・マージノード1'},
+  elseとかおく
+
+  {'from': [{'xmi': '19q-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '17e-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'x+1'},
+  {'from': {'xmi': ''}, 'to': [{'xmi': '104-a28c6a3f0d904d2a8aacd4d1ef46c372'}, {'xmi': '19q-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': '終了0'}]
+
+[{'from': [{'xmi': '6d-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [], 'name': '開始0'}
+ {'from': [{'xmi': '104-a28c6a3f0d904d2a8aacd4d1ef46c372'}, {'xmi': '17e-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '1o1-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'デシジョンノード・マージノード1'},
+ {'from': [{'xmi': '1hl-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '6d-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'int+x'},
+ {'from': [{'xmi': '19q-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '17e-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'x+1'},
+ {'from': [{'xmi': '1o1-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'to': [{'xmi': '1hl-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': 'input+x'},
+ {'from': [], 'to': [{'xmi': '104-a28c6a3f0d904d2a8aacd4d1ef46c372'}, {'xmi': '19q-a28c6a3f0d904d2a8aacd4d1ef46c372'}], 'name': '終了0'}]
