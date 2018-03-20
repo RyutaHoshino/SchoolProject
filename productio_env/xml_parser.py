@@ -10,45 +10,65 @@ flow_lists = []
 output_flow_figure_list = []
 initialData =[]
 
-def extraction_action_state(data_lists):
-    # フロー図のstateのみ抽出します 出発点 starting_point　目的地  destination
-    for state_parts in data_lists['UML:Pseudostate']:
-        starting_point = []
-        destination = []
-        if 'UML:StateVertex.outgoing' in state_parts:
-            # 配列の長さで条件分岐する！ 0 or 1 or 2以上
-            transaction_count = len(state_parts['UML:StateVertex.outgoing']['UML:Transition'])
-            if transaction_count == 1:
-                xml = state_parts['UML:StateVertex.outgoing']['UML:Transition']['@xmi.idref']
-                starting_point.append({ 'from_xmi': xml })
-            else:
-                for state_part in state_parts['UML:StateVertex.outgoing']['UML:Transition']:
-                    starting_point.append({ 'from_xmi': state_part['@xmi.idref'] })
-        else:
-            starting_point.append({ 'from_xmi': '' })
+def change_starting_point_dict(state_parts):
+    starting_point = []
+    transaction_count = len(state_parts['UML:StateVertex.outgoing']['UML:Transition'])
+    if transaction_count == 1:
+        xml = state_parts['UML:StateVertex.outgoing']['UML:Transition']['@xmi.idref']
+        starting_point.append({ 'xmi': xml })
+    else:
+        for state_part in state_parts['UML:StateVertex.outgoing']['UML:Transition']:
+            starting_point.append({ 'xmi': state_part['@xmi.idref'] })
+    return starting_point
 
-        if 'UML:StateVertex.incoming' in state_parts:
-            transaction_count = len(state_parts['UML:StateVertex.incoming']['UML:Transition'])
-            if transaction_count == 1:
-                xml = state_parts['UML:StateVertex.incoming']['UML:Transition']['@xmi.idref']
-                destination.append({ 'to_xmi': xml })
-            else:
-                for state_part in state_parts['UML:StateVertex.incoming']['UML:Transition']:
-                    starting_point.append({ 'to_xmi': state_part['@xmi.idref'] })
+def change_destination_dict(state_parts):
+    destination = []
+    transaction_count = len(state_parts['UML:StateVertex.incoming']['UML:Transition'])
+    if transaction_count == 1:
+        xml = state_parts['UML:StateVertex.incoming']['UML:Transition']['@xmi.idref']
+        destination.append({ 'xmi': xml })
+    else:
+        for state_part in state_parts['UML:StateVertex.incoming']['UML:Transition']:
+            destination.append({ 'xmi': state_part['@xmi.idref'] })
+    return destination
+
+def extraction_action_state(data_lists):
+    # フロー図のstateのみ抽出
+    for state_parts in data_lists['UML:Pseudostate']:
+        if 'UML:StateVertex.outgoing' in state_parts:
+            result_outgoing = change_starting_point_dict(state_parts)
         else:
-            destination.append({ 'to_xmi': '' })
-        #　統合するよ
+            result_outgoing = [{ 'xmi': '' }]
+        if 'UML:StateVertex.incoming' in state_parts:
+            result_incoming = change_destination_dict(state_parts)
+        else:
+            result_incoming = [{ 'xmi': '' }]
         name = urllib.parse.unquote(state_parts['@name'])
-        import pdb; pdb.set_trace()
-        state_part = { 'root': { starting_point,destination }, 'name': name }
-        # state_lists.append(state_part)
-    # 終点部分の処理
-   #  last_part = urllib.parse.unquote(data_lists['UML:FinalState']['@name'])
-   #  state_lists.insert(-1, last_part)
-   # # 中間部分の処理
-   #  for action_parts in data_lists['UML:ActionState']:
-   #      middle_part = urllib.parse.unquote(action_parts['@name'])
-   #      state_lists.append(middle_part)
+        state_part = { 'from': result_outgoing, 'to': result_incoming , 'name': name }
+        # ここ変えるかも appendじゃないほうがよい
+        state_lists.append(state_part)
+
+    for action_parts in data_lists['UML:ActionState']:
+        if 'UML:StateVertex.outgoing' in state_parts:
+            result_outgoing = change_starting_point_dict(state_parts)
+        else:
+            result_outgoing = [{ 'xmi': '' }]
+        if 'UML:StateVertex.incoming' in state_parts:
+            result_incoming = change_destination_dict(state_parts)
+        else:
+            result_incoming = [{ 'xmi': '' }]
+        name = urllib.parse.unquote(action_parts['@name'])
+        state_part = { 'from': result_outgoing, 'to': result_incoming , 'name': name }
+        state_lists.append(state_part)
+
+    last_parts = data_lists['UML:FinalState']
+    if 'UML:StateVertex.incoming' in last_parts:
+        result_incoming = change_destination_dict(last_parts)
+    else:
+        result_incoming = [{ 'xmi': '' }]
+    name = urllib.parse.unquote(data_lists['UML:FinalState']['@name'])
+    state_part = { 'from': { 'xmi': '' }, 'to': result_incoming , 'name': name }
+    state_lists.insert(-1, state_part)
 
     return state_lists
 
