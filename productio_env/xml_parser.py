@@ -4,6 +4,7 @@
 import xmltodict
 import urllib.parse
 import sys
+import textwrap
 
 def change_starting_point_dict(state_parts):
     starting_point = []
@@ -97,70 +98,112 @@ def merge_action_and_flow(actions, flow):
         # 使わない
         for from_key in actions[0]['from']:
             xmi_key.append(from_key['xmi'])
-    for index, action in enumerate(actions):
-        if action['to'][0]['xmi'] == ''.join(xmi_key):
-            sort_flow_list.append(action['name'])
-            xmi_key = [] # リセット作業
-            xmi_key.append(action['from'][0]['xmi'])
-            # popにするとまずいかも
-            actions.pop(index)
+    while len(actions) > 1:
+        if len(xmi_key) == 1:
+            for index, action in enumerate(actions):
+                if action['to'][0]['xmi'] == ''.join(xmi_key):
+                    sort_flow_list.append(action['name'])
+                    xmi_key = [] # リセット作業
+                    # keyが二つあるパターンを検討する
+                    if len(action['from']) > 1:
+                        for s in action['from']:
+                            xmi_key.append(s['xmi'])
+                    else:
+                        xmi_key.append(action['from'][0]['xmi'])
+                    actions.pop(index)
+        if len(xmi_key) != 1:
+            local_xmi_key = xmi_key
+            xmi_key = []
+            for index, action in enumerate(actions):
+                # ４パターンすべきかlocalの0番目
+                xmi_key_0 = action['to'][0]['xmi']
+                # xmi_key_1 = action['to'][1]['xmi']
+                if xmi_key_0 == ''.join(local_xmi_key[0]):
+                    # xmiの0番と keyの0番目
+                    # sort_flow_list.append(action['name'])
+                    if local_xmi_key[0] ==  flow[0]['xmi_id']:
+                        xmi_guard = flow[0]['guard']
+                        sort_flow_list.append([xmi_guard, action['name']])
+                    elif local_xmi_key[0] ==  flow[1]['xmi_id']:
+                        xmi_guard = flow[1]['guard']
+                        sort_flow_list.append([xmi_guard, action['name']])
+                    # ToDo flowの中身もいれる
+                    if len(action['from']) > 0:
+                        for s in action['from']:
+                            xmi_key.append(s['xmi'])
+                            actions.pop(index)
+                    else:
+                        xmi_key.append(action['from'][0]['xmi'])
+                # xmiの0番と keyの 1番目
+                elif xmi_key_0 == ''.join(local_xmi_key[1]):
+                    if local_xmi_key[0] ==  flow[0]['xmi_id']:
+                        xmi_guard = flow[0]['guard']
+                        sort_flow_list.append([xmi_guard, action['name']])
+                    elif local_xmi_key[0] ==  flow[1]['xmi_id']:
+                        xmi_guard = flow[1]['guard']
+                        sort_flow_list.append([xmi_guard, action['name']])
 
-    for index, action in enumerate(actions):
-        if action['to'][0]['xmi'] == ''.join(xmi_key):
-            sort_flow_list.append(action['name'])
-            xmi_key = [] # リセット作業
-            # keyが二つあるパターンを検討する
-            if len(action['from']) > 1:
-                for s in action['from']:
-                    if s['xmi'] ==  flow[1]['xmi_id']:
-                        sort_flow_list.append(flow[1]['guard'])
-                    xmi_key.append(s['xmi'])
-            else:
-                xmi_key.append(action['from'][0]['xmi'])
-            actions.pop(index)
-    if len(xmi_key) != 1:
-        local_xmi_key = xmi_key
-        xmi_key = []
-        for index, action in enumerate(actions):
-            if action['to'][0]['xmi'] == ''.join(local_xmi_key[0]):
-                sort_flow_list.append(action['name'])
-                # ToDo flowの中身もいれる
-                if len(action['from']) > 0:
-                    for s in action['from']:
-                        xmi_key.append(s['xmi'])
-                        actions.pop(index)
-                else:
                     if len(action['from']) > 0:
+                        for s in action['from']:
+                            xmi_key.append(s['xmi'])
+                            actions.pop(index)
+                    else:
                         xmi_key.append(action['from'][0]['xmi'])
-            if action['to'][0]['xmi'] == ''.join(local_xmi_key[1]):
-                sort_flow_list.append(action['name'])
-                if len(action['from']) > 0:
-                    for s in action['from']:
-                        xmi_key.append(s['xmi'])
-                        actions.pop(index)
-                else:
-                    if len(action['from']) > 0:
-                        xmi_key.append(action['from'][0]['xmi'])
-            if  len(actions) == 1 and len(actions[0]['from']) == 0:
-                sort_flow_list.append(actions[0]['name'])
-                break
-    # 繰り返してlenが０になるまでやるとかあり
+                # xmiの1番と keyの 0番目
+                # elif action and xmi_key_1 == ''.join(local_xmi_key[0]):
+                #     sort_flow_list.append(action['name'])
+                #     if local_xmi_key[0] ==  flow[0]['xmi_id']:
+                #         sort_flow_list.append(flow[0]['guard'])
+                #     elif local_xmi_key[0] ==  flow[1]['xmi_id']:
+                #         sort_flow_list.append(flow[1]['guard'])
+                #     if len(action['from']) > 0:
+                #         for s in action['from']:
+                #             xmi_key.append(s['xmi'])
+                #             actions.pop(index)
+                #     else:
+                #         xmi_key.append(action['from'][0]['xmi'])
+                # # xmiの1番目とkeyの一番目
+                # elif action and xmi_key_1 == ''.join(local_xmi_key[1]):
+                #     sort_flow_list.append(action['name'])
+                #     if local_xmi_key[1] ==  flow[0]['xmi_id']:
+                #         sort_flow_list.append(flow[0]['guard'])
+                #     elif local_xmi_key[1] ==  flow[1]['xmi_id']:
+                #         sort_flow_list.append(flow[1]['guard'])
+                #     if len(action['from']) > 0:
+                #         for s in action['from']:
+                #             xmi_key.append(s['xmi'])
+                #             actions.pop(index)
+                #     else:
+                #         xmi_key.append(action['from'][0]['xmi'])
+                # メソッド終了条件
+                if  len(actions) == 1 and len(actions[0]['from']) == 0:
+                    sort_flow_list.append(actions[0]['name'])
+                    break
     return sort_flow_list
 
 def string_to_python_code(string_lines):
     # pythonに対応していないため書き換える
     output_flow_figure_list = []
-    for string_line in string_lines:
+    for index, string_line in enumerate(string_lines):
         if string_line.find('input+') != -1:
-            string_line = "x = int(input())"
+            # xを抽出
+            result = string_lines[2].split('+')
+            string_line = str(result[1]) + " = int(input())"
+            output_flow_figure_list.append(string_line)
+        elif string_line.find('output+') != -1:
+            result = string_lines[2].split('+')
+            string_line = "print(" + str(result[1]) + ")"
             output_flow_figure_list.append(string_line)
         elif string_line.find('デシジョンノード') != -1:
-            string_line = "if"
+            # if文を組み立てる
+            if_block = string_lines[index + 1]
+            string_lines.pop(index + 1)
+            string_line = textwrap.dedent('''
+                if {condition}:
+                    {action}
+            ''').format(condition=if_block[0], action=if_block[1]).strip()
             output_flow_figure_list.append(string_line)
-        elif string_line.find('+1') != -1:
-            string_line = '    ' + string_line.replace('+1', ' += 1')
-            output_flow_figure_list.append(string_line)
-        elif string_line.find('>' or '<') != -1:
+        elif string_line.find('>' or '<' or '=') != -1:
             output_flow_figure_list.append(string_line)
     return output_flow_figure_list
 # target_readなら問題ない　クラスにしたいね。
@@ -177,13 +220,6 @@ with open(xml_path) as fd:
     # 統合
     flow_result = merge_action_and_flow(action_part_list, flow_part_list)
     new_data_flow_part_list = string_to_python_code(flow_result)
-    # print文だけ追加&if文の構築する
-    for index, s in enumerate(new_data_flow_part_list):
-        if s == 'if':
-            judge = new_data_flow_part_list[index + 1]
-            new_data_flow_part_list[index] = 'if '+ str(judge) + ":"
-            new_data_flow_part_list.pop(index + 1)
-    new_data_flow_part_list.append('print(x)')
 # pythonファイルへの出力
 f = open('result.py', 'w')
 str1 = '\n'.join(str(e) for e in new_data_flow_part_list)
